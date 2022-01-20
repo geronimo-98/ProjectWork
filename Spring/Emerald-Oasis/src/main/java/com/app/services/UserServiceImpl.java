@@ -4,6 +4,7 @@ package com.app.services;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.app.daos.RoleDaoImpl;
@@ -24,8 +25,13 @@ public class UserServiceImpl {
 	private RoleDaoImpl roleDao;
 	@Autowired
 	private DTOEntityConverter converter;
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
 	public UserDTO saveUser(UserDTO userDto) {
+		String rawPassword = userDto.getPassword();
+		String encPassword = passwordEncoder.encode(rawPassword);
+		userDto.setPassword(encPassword);
 		User user = converter.toUserEntity(userDto);
 		user = userDao.save(user);
 		userDto = converter.toUserDTO(user);
@@ -35,7 +41,8 @@ public class UserServiceImpl {
 	
 	public UserDTO findUserByEmailAndPassword(Credentials cred) {
 		User dbUser = userDao.findByEmail(cred.getEmail());
-		if(dbUser != null && (dbUser.getPassword()).equals(cred.getPassword())) {
+		String rawPassword = cred.getPassword();
+		if(dbUser != null && passwordEncoder.matches(rawPassword, dbUser.getPassword())) {
 			UserDTO result = converter.toUserDTO(dbUser);
 			result.setPassword("*******");
 			return result;
