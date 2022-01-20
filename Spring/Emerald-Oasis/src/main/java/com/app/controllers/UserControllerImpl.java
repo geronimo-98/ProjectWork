@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.app.config.Response;
 import com.app.dtos.Credentials;
 import com.app.dtos.UserDTO;
-import com.app.entities.Role;
 import com.app.services.UserServiceImpl;
 
 @CrossOrigin(origins = "*")
@@ -28,7 +27,7 @@ public class UserControllerImpl {
 	
 	@PostMapping("/user/signup")
 	public ResponseEntity<?> signUp(@RequestBody UserDTO userDto) {
-		userDto.setRole_id(3);
+		userDto.setRoleId(userService.getUserRoleId("customer"));
 		UserDTO result = userService.saveUser(userDto);
 		
 		return Response.success(result);

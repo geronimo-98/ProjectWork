@@ -11,13 +11,13 @@ public class DTOEntityConverter {
 	public UserDTO toUserDTO(User user) {
 		UserDTO dto = new UserDTO();
 		
-		dto.setUser_id(user.getUser_id());
-		dto.setFirst_name(user.getFirst_name());
-		dto.setLast_name(user.getLast_name());
+		dto.setUserId(user.getUserId());
+		dto.setFirstName(user.getFirstName());
+		dto.setLastName(user.getLastName());
 		dto.setEmail(user.getEmail());
-		dto.setPhone_no(user.getPhone_no());
+		dto.setPhoneNo(user.getPhoneNo());
 		dto.setPassword(user.getPassword());
-		dto.setRole_id((user.getRole()).getRole_id());
+		dto.setRoleId((user.getRole()).getRoleId());
 		
 		return dto;
 	}
@@ -25,13 +25,13 @@ public class DTOEntityConverter {
 	public User toUserEntity(UserDTO dto) {
 		User user = new User();
 		
-		user.setUser_id(dto.getUser_id());
-		user.setFirst_name(dto.getFirst_name());
-		user.setLast_name(dto.getLast_name());
+		user.setUserId(dto.getUserId());
+		user.setFirstName(dto.getFirstName());
+		user.setLastName(dto.getLastName());
 		user.setEmail(dto.getEmail());
-		user.setPhone_no(dto.getPhone_no());
+		user.setPhoneNo(dto.getPhoneNo());
 		user.setPassword(dto.getPassword());
-		user.setRole(new Role(dto.getRole_id()));
+		user.setRole(new Role(dto.getRoleId()));
 		
 		return user;
 	}

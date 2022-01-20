@@ -2,43 +2,43 @@ package com.app.dtos;
 
 public class UserDTO {
 	
-	private int user_id;
-	private String first_name;
-	private String last_name;
+	private int userId;
+	private String firstName;
+	private String lastName;
 	private String email;
 	private String password;
-	private String phone_no;
-	private int role_id;
-	public UserDTO(int user_id, String first_name, String last_name, String email, String password, String phone_no, int role_id) {
+	private String phoneNo;
+	private int roleId;
+	public UserDTO(int userId, String firstName, String lastName, String email, String password, String phoneNo, int roleId) {
 		super();
-		this.user_id = user_id;
-		this.first_name = first_name;
-		this.last_name = last_name;
+		this.userId = userId;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
-		this.phone_no = phone_no;
-		this.role_id = role_id;
+		this.phoneNo = phoneNo;
+		this.roleId = roleId;
 	}
 	public UserDTO() {
 		super();
 	}
-	public int getUser_id() {
-		return user_id;
+	public int getUserId() {
+		return userId;
 	}
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
-	public String getFirst_name() {
-		return first_name;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	public String getLast_name() {
-		return last_name;
+	public String getLastName() {
+		return lastName;
 	}
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	public String getEmail() {
 		return email;
@@ -52,22 +52,22 @@ public class UserDTO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getPhone_no() {
-		return phone_no;
+	public String getPhoneNo() {
+		return phoneNo;
 	}
-	public void setPhone_no(String phone_no) {
-		this.phone_no = phone_no;
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
 	}
-	public int getRole_id() {
-		return role_id;
+	public int getRoleId() {
+		return roleId;
 	}
-	public void setRole_id(int role_id) {
-		this.role_id = role_id;
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
 	}
 	@Override
 	public String toString() {
-		return "UserDTO [user_id=" + user_id + ", first_name=" + first_name + ", last_name=" + last_name + ", email="
-				+ email + ", phone_no=" + phone_no + "]";
+		return "UserDTO [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
+				+ email + ", phoneNo=" + phoneNo + "]";
 	}
 
 }

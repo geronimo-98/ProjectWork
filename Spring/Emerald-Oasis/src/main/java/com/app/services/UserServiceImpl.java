@@ -1,12 +1,12 @@
 package com.app.services;
 
-import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.daos.RoleDaoImpl;
 import com.app.daos.UserDaoImpl;
 import com.app.dtos.Credentials;
 import com.app.dtos.DTOEntityConverter;
@@ -20,6 +20,8 @@ public class UserServiceImpl {
 	
 	@Autowired
 	private UserDaoImpl userDao;
+	@Autowired
+	private RoleDaoImpl roleDao;
 	@Autowired
 	private DTOEntityConverter converter;
 
@@ -39,5 +41,10 @@ public class UserServiceImpl {
 			return result;
 		}
 		return null;
+	}
+	
+	public int getUserRoleId(String roleName) {
+		Role role = roleDao.findByRoleName(roleName);
+		return role.getRoleId();
 	}
 }
