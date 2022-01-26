@@ -68,7 +68,7 @@ const SignupUser = () => {
 
     return (
         <div className="signupuser">
-            <div className="container">
+            <div className="container-fluid">
                 <div className="row">
                             <div className="col"></div>
                             <div className="col"></div>

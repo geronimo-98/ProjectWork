@@ -48,7 +48,7 @@ const Signin = () => {
 
     return (
         <div className="login">
-          <div className="container">
+          <div className="container-fluid">
             <div className="row">
               <div className="col"></div>
               <div className="col"></div>

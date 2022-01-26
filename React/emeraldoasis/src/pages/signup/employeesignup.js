@@ -69,7 +69,7 @@ const SignupEmployee = () => {
 
     return (
         <div className="signupemployee">
-            <div className="container">
+            <div className="container-fluid">
             <div className="row">
                             <div className="col">
                                 <div className="empdiv">

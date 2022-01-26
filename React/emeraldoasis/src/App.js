@@ -6,12 +6,14 @@ import SignupUser from './pages/signup/usersignup';
 import SignupEmployee from './pages/signup/employeesignup';
 import './App.css'
 import Home from './pages/customer/home';
+import FirstHome from './pages/landing/firsthomepage';
 
 function App() {
   return (
     <div className='container'>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<FirstHome />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/signupuser" element={<SignupUser />} />
           <Route path="/signupemployee" element={<SignupEmployee />} />
